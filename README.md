@@ -6,3 +6,6 @@ Clone the repo and run it locally. Because of the dataset size, this is not mean
 
 # Source Data
 https://fdc.nal.usda.gov/download-datasets.html
+
+# Spark Config
+https://spark.apache.org/docs/latest/quick-start.html
