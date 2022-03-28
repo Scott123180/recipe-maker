@@ -7,7 +7,7 @@ const foodId = "";
 
 export const query = graphql`
   query Ingredient ($foodId: String) {
-    currentCsv(ndbNo: {eq: $foodId}) {
+    foodData(ndbNo: {eq: $foodId}) {
       ndbNo
       shrtDesc
       energKcal

@@ -7,7 +7,7 @@ const NutritionDatabase = () => (
   <StaticQuery
     query={graphql`
       {
-        allCurrentCsv {
+        foodData {
           nodes {
             ndbNo
             shrtDesc
