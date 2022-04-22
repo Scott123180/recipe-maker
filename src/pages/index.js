@@ -4,16 +4,25 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
-const IndexPage = () => (
-  <Layout>
-    <Seo title="Home" />
-    <p>Recipe input site</p>
+import AllIngredients from "../queries/AllIngredients.js";
+import { render } from "react-dom";
 
+const myData = AllIngredients();
 
-    <p>
-      <Link to="/page-2/">Go to page 2</Link> <br />
-    </p>
-  </Layout>
-)
+class IndexPage extends React.Component {
 
-export default IndexPage
+  render() {
+    return (
+    <Layout>
+      <Seo title="Home" />
+      <p>Recipe input site</p>
+      <p>
+        <Link to="/page-2/">Go to page 2</Link> <br />
+      </p>
+      {myData}
+    </Layout>
+    );
+  }
+} 
+
+export default IndexPage;
