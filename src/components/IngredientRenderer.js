@@ -1,5 +1,5 @@
 import React from 'react';
-import reactDom from 'react-dom';
+import { Autocomplete, TextField } from '@mui/material';
 
 class RecipeInput extends React.Component {
     constructor(props) {
@@ -7,12 +7,23 @@ class RecipeInput extends React.Component {
 
         this.state = {
             "data" : props.data,
-            "searchInput" : null
+            "searchInput" : null,
+            "ingredients" : []
         }
     }
 
     updateState = (key,value) => {
         this.setState({[[key]]: value});
+    }
+
+    addIngredient = (value) => {
+
+        const nbdNoLookup = "";
+
+
+        this.setState((prevState, nbdNoLookup) => {
+            recipes: prevState.recipes.push(nbdNoLookup);
+        })
     }
 
     /*
@@ -34,7 +45,15 @@ class RecipeInput extends React.Component {
 
         return (
             <div>
-                {AllIngredients}
+                <Autocomplete
+                    disablePortal
+                    id="combo-box-demo"
+                    options={AllIngredients}
+                    sx={{ width: 300 }}
+                    onChange={(event) => this.addIngredient(event.target.value)}
+                />
+
+                {this.state.ingredients}
             </div>
 
         );
