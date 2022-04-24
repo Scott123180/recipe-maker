@@ -1,6 +1,7 @@
 import React from 'react';
+import reactDom from 'react-dom';
 
-class IngredientRenderer extends React.Component {
+class RecipeInput extends React.Component {
     constructor(props) {
         super(props);
 
@@ -14,8 +15,22 @@ class IngredientRenderer extends React.Component {
         this.setState({[[key]]: value});
     }
 
+    /*
+        Features
+          - search and add ingredient
+            - input form
+            - name
+            - preparation
+            - amount
+          - nutrition display
+          - export as json
+
+        -eventually upload from json so you can edit recipes
+
+    */
+
     render() {
-        const AllIngredients = this.state.data.allAllFoodDataCsv.nodes.map((node) => console.log(node.shrtDesc));
+        const AllIngredients = this.state.data.allAllFoodDataCsv.nodes.map((node) => node.shrtDesc)
 
         return (
             <div>
@@ -26,4 +41,4 @@ class IngredientRenderer extends React.Component {
     }
 }
 
-export default IngredientRenderer;
+export default RecipeInput;

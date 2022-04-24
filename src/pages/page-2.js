@@ -5,7 +5,7 @@ import Layout from "../components/layout";
 import Seo from "../components/seo";
 import { graphql } from "gatsby";
 
-import IngredientRenderer from "../components/IngredientRenderer";
+import RecipeInput from "../components/IngredientRenderer";
 
 const SecondPage = ({data}) => (
   <Layout>
@@ -14,7 +14,7 @@ const SecondPage = ({data}) => (
     <input type="text" onChange={event => this.updateInputBoxState(event.target.value)}/>
     <p>Welcome to page 2</p>
     {console.log(data.allAllFoodDataCsv)}
-    <IngredientRenderer data={data} />
+    <RecipeInput data={data} />
 
     <Link to="/">Go back to the homepage</Link>
   </Layout>
